@@ -1,6 +1,7 @@
 package com.doo.boj;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -14,7 +15,8 @@ public class N11657_TimeMachine {
 	
 	public static void main(final String[] args) {
 		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        	BufferedReader br = new BufferedReader(new FileReader("/Users/jeonbyeongdoo/Documents/workspace/algorithm/resources/N11657_SampleData_1.txt"));
 			String str;
 			str = br.readLine();
 			N = Integer.parseInt(str.split(" ")[0]);
