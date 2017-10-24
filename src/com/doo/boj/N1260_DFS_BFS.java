@@ -1,5 +1,7 @@
 package com.doo.boj;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -18,34 +20,41 @@ public class N1260_DFS_BFS {
 	static int dfsResultIndex = 0, bfsResultIndex = 0;
 	
 	public static void main(final String[] args) {
-		final Scanner sc = new Scanner(System.in);
 		
-		N = sc.nextInt();
-		M = sc.nextInt();
-		V = sc.nextInt();
-		adjacencyMatrix = new boolean[N + 1][N + 1];
-		visit = new boolean[N + 1];
-		dfsResult = new int[N];
-		bfsResult = new int[N];
-		
-		int s, t;
-		for (int i = 0; i < M; i++) {
-			s = sc.nextInt();
-			t = sc.nextInt();
-			adjacencyMatrix[s][t] = true;
-			adjacencyMatrix[t][s] = true;
-		}
-		
-		dfs(V);
-		visit = new boolean[N + 1];
-		bfs(V);
-		
-		for (int i = 0; i < dfsResult.length; i++) {
-			System.out.print(dfsResult[i] + " ");
-		}
-		System.out.println();
-		for (int i = 0; i < bfsResult.length; i++) {
-			System.out.print(bfsResult[i] + " ");
+		try {
+			//final Scanner sc = new Scanner(System.in);
+			final Scanner sc = new Scanner(new File("/Users/jeonbyeongdoo/Documents/workspace/algorithm/resources/N1260_SampleData.txt"));
+			
+			N = sc.nextInt();
+			M = sc.nextInt();
+			V = sc.nextInt();
+			adjacencyMatrix = new boolean[N + 1][N + 1];
+			visit = new boolean[N + 1];
+			dfsResult = new int[N];
+			bfsResult = new int[N];
+			
+			int s, t;
+			for (int i = 0; i < M; i++) {
+				s = sc.nextInt();
+				t = sc.nextInt();
+				adjacencyMatrix[s][t] = true;
+				adjacencyMatrix[t][s] = true;
+			}
+			
+			dfs(V);
+			visit = new boolean[N + 1];
+			bfs(V);
+			
+			for (int i = 0; i < dfsResult.length; i++) {
+				System.out.print(dfsResult[i] + " ");
+			}
+			System.out.println();
+			for (int i = 0; i < bfsResult.length; i++) {
+				System.out.print(bfsResult[i] + " ");
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
