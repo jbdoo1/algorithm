@@ -1,10 +1,9 @@
 package com.doo.boj;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
@@ -31,7 +30,8 @@ public class N1197_MST_Kruskal {
 	
 	public static void main(final String[] args) {
 		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			BufferedReader br = new BufferedReader(new FileReader("/Users/jeonbyeongdoo/Documents/workspace/algorithm/resources/N1197_SampleData_1.txt"));
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			V = Integer.parseInt(st.nextToken());
 			E = Integer.parseInt(st.nextToken());
